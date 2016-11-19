@@ -11,7 +11,8 @@ angular.module('movie', [
 		$routeProvider
 			.otherwise({redirectTo: '/top50'});
 	}])
-	.controller('indexCtrl', ['$scope', function ($scope) {
+
+	.controller('indexCtrl', ['$scope', '$window', function ($scope, $window) {
 
 		$scope.activeChange = function (id) {
 			for (var i = 0; i < $scope.li.length; i++) {
@@ -37,8 +38,22 @@ angular.module('movie', [
 				title: 'incoming',
 				active: false
 
-			}]
+			}];
 
+		$scope.scroll = function () {
+			var scrollTop = function () {
+			var timer=	$window.setInterval(function () {
+					var currentTop = $window.scrollY;
+					var nextOffset =currentTop- (currentTop-0)/17;
+					$window.scroll(0,nextOffset);
+					if(parseInt(currentTop)==0){
+						$window.clearInterval(timer);
 
+					}
+				//console.log(currentTop);
+				}, 30)
+			};
+			scrollTop();
+		}
 	}]);
 

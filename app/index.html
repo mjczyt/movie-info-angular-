@@ -19,8 +19,9 @@
 			<div class="masthead clearfix">
 				<div class="inner">
 					<h3 class="masthead-brand">Movie</h3>
-					<ul class="nav masthead-nav" ng-app="movie" ng-controller="indexCtrl" ng-cloak >
-						<li ng-repeat="list in li "  ng-class='{"active":list.active}' ng-click="activeChange(list.id)" ><a href="#{{list.title}}">{{list.title}}</a></li>
+					<ul class="nav masthead-nav" ng-app="movie" ng-controller="indexCtrl" ng-cloak>
+						<li ng-repeat="list in li " ng-class='{"active":list.active}' ng-click="activeChange(list.id)">
+							<a href="#{{list.title}}">{{list.title}}</a></li>
 
 					</ul>
 				</div>
@@ -28,12 +29,15 @@
 
 			<div class="inner cover container list-group" ng-view>
 
-
+			</div>
+			<div class="spinner">
+				<div class="dot1"></div>
+				<div class="dot2"></div>
 			</div>
 		</div>
 	</div>
 </div>
-
+<img src="icon/scroll.svg" alt="" id="scrollTop" ng-app="movie" ng-controller="indexCtrl" ng-click="scroll()" >
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
