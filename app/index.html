@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="movie">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My AngularJS App</title>
+	<link rel="stylesheet" href="app.css">
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+
+
+<div class="site-wrapper">
+	<div class="site-wrapper-inner">
+		<div class="cover-container">
+			<div class="masthead clearfix">
+				<div class="inner">
+					<h3 class="masthead-brand">Movie</h3>
+					<ul class="nav masthead-nav" ng-app="movie" ng-controller="indexCtrl" ng-cloak >
+						<li ng-repeat="list in li "  ng-class='{"active":list.active}' ng-click="activeChange(list.id)" ><a href="#{{list.title}}">{{list.title}}</a></li>
+
+					</ul>
+				</div>
+			</div>
+
+			<div class="inner cover container list-group" ng-view>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="components/http.js"></script>
+<script src="app.js"></script>
+<script src="top50/top50.js"></script>
+<script src="current/current.js"></script>
+<script src="incoming/incoming.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>
