@@ -28,6 +28,9 @@ angular.module('movie', [
 			$route.updateParams({category: title});
 
 		};
+		$scope.init=function(){
+			$route.updateParams({category: 'top50'});
+		};
 		$scope.li = [{
 			id: 0,
 			title: 'top50',
