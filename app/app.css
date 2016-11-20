@@ -278,3 +278,13 @@ background-color: grey;
 	top:80%;
 
 }
+
+.inner .input-group{
+	position: absolute;
+	left:96%;
+	top: 34px;
+}
+.inner .input-group input{
+	width:75px;
+	top:1px;
+}

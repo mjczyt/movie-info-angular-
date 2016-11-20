@@ -18,12 +18,27 @@
 		<div class="cover-container">
 			<div class="masthead clearfix">
 				<div class="inner">
-					<h3 class="masthead-brand"><img src="icon/small.svg" alt="small" style="height: 27px;">&nbspMovie</h3>
+					<h3 class="masthead-brand"><img src="icon/small.svg" alt="small" style="height: 27px;">&nbspMovie
+					</h3>
 					<ul class="nav masthead-nav" ng-app="movie" ng-controller="indexCtrl" ng-cloak>
-						<li ng-repeat="list in li " ng-class='{"active":list.active}' ng-click="activeChange(list.id)">
-								<a href="#{{list.title}}"><img src="{{list.icon}}" alt="{{list.title}}" style="height: 20px;">&nbsp&nbsp{{list.title}}</a></li>
+						<li ng-repeat="list in li " ng-class='{"active":list.active}' ng-click="activeChange(list.id,list.title)">
+							<a ><img src="{{list.icon}}" alt="{{list.title}}"
+														   style="height: 20px;">&nbsp&nbsp{{list.title}}</a></li>
+
 
 					</ul>
+					<form ng-app="movie" ng-controller="indexCtrl" ng-submit="submit()" ng-cloak>
+						<div class="input-group input-group-sm hidden-sm hidden-xs" >
+
+							<span class="input-group-addon glyphicon glyphicon-search"></span>
+
+							<input type="text" class="form-control" placeholder="Search" ng-model="submitText">
+
+
+
+						</div>
+					</form>
+
 				</div>
 			</div>
 
@@ -37,15 +52,12 @@
 		</div>
 	</div>
 </div>
-<img src="icon/scroll.svg" alt="" id="scrollTop" ng-app="movie" ng-controller="indexCtrl" ng-click="scroll()" >
+<img src="icon/scroll.svg" alt="" id="scrollTop" ng-app="movie" ng-controller="indexCtrl" ng-click="scroll()">
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="components/http.js"></script>
 <script src="app.js"></script>
-<script src="tabs/top50.js"></script>
-<script src="tabs/current.js"></script>
-<script src="tabs/incoming.js"></script>
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
