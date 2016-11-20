@@ -4,7 +4,7 @@ angular.module('movie.current', ['ngRoute','movie.services.http'])
 
 	.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/current', {
-			templateUrl: 'current/current.html',
+			templateUrl: 'tabs/view.html',
 			controller: 'currentCtrl'
 		});
 	}])

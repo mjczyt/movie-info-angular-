@@ -4,7 +4,7 @@ angular.module('movie.top50', ['ngRoute', 'movie.services.http'])
 
 	.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider.when('/top50', {
-			templateUrl: 'top50/top50.html',
+			templateUrl: 'tabs/view.html',
 			controller: 'top50Ctrl'
 		});
 	}])

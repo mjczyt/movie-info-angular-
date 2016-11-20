@@ -4,10 +4,11 @@ angular.module('movie.incoming', ['ngRoute','movie.services.http'])
 
 	.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/incoming', {
-			templateUrl: 'incoming/incoming.html',
+			templateUrl: 'tabs/view.html',
 			controller: 'incomingCtrl'
 		});
 	}])
+
 
 	.controller('incomingCtrl', ['$scope','HttpService',function($scope,HttpService) {
 		$scope.subjects = [];
