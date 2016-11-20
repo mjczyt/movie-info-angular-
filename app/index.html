@@ -18,10 +18,10 @@
 		<div class="cover-container">
 			<div class="masthead clearfix">
 				<div class="inner">
-					<h3 class="masthead-brand">Movie</h3>
+					<h3 class="masthead-brand"><img src="icon/small.svg" alt="small" style="height: 27px;">&nbspMovie</h3>
 					<ul class="nav masthead-nav" ng-app="movie" ng-controller="indexCtrl" ng-cloak>
 						<li ng-repeat="list in li " ng-class='{"active":list.active}' ng-click="activeChange(list.id)">
-							<a href="#{{list.title}}">{{list.title}}</a></li>
+								<a href="#{{list.title}}"><img src="{{list.icon}}" alt="{{list.title}}" style="height: 20px;">&nbsp&nbsp{{list.title}}</a></li>
 
 					</ul>
 				</div>

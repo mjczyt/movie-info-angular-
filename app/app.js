@@ -26,17 +26,21 @@ angular.module('movie', [
 		$scope.li = [{
 			id: 0,
 			title: 'top50',
-			active: true
+			active: true,
+			icon:'icon/top50.svg'
 		},
 			{
 				id: 1,
 				title: 'current'
-				, active: false
+				, active: false,
+				icon:'icon/current.svg'
 			},
 			{
 				id: 2,
 				title: 'incoming',
-				active: false
+				active: false,
+				icon:'icon/incoming.svg'
+
 
 			}];
 
