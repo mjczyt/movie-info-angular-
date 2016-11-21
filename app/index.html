@@ -22,20 +22,15 @@
 					</h3>
 					<ul class="nav masthead-nav" ng-app="movie" ng-controller="indexCtrl" ng-cloak>
 						<li ng-repeat="list in li " ng-class='{"active":list.active}' ng-click="activeChange(list.id,list.title)">
-							<a ><img src="{{list.icon}}" alt="{{list.title}}"
+							<a href="#{{list.title}}"><img src="{{list.icon}}" alt="{{list.title}}"
 														   style="height: 20px;">&nbsp&nbsp{{list.title}}</a></li>
 
 
 					</ul>
 					<form ng-app="movie" ng-controller="indexCtrl" ng-submit="submit()" ng-cloak>
 						<div class="input-group input-group-sm hidden-sm hidden-xs" >
-
 							<span class="input-group-addon glyphicon glyphicon-search"></span>
-
 							<input type="text" class="form-control" placeholder="Search" ng-model="submitText">
-
-
-
 						</div>
 					</form>
 

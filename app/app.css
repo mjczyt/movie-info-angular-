@@ -25,10 +25,9 @@ a:hover {
 
 html,
 body {
-	height:auto;
+	height: auto;
 	background-color: #333;
 }
-
 
 html > body {
 	font-family: "Apple Braille";
@@ -51,7 +50,7 @@ html > body {
 }
 
 .site-wrapper-inner {
-	margin-top:100px;
+	margin-top: 100px;
 	vertical-align: top;
 }
 
@@ -63,7 +62,7 @@ html > body {
 /* Padding for spacing */
 .inner {
 	padding: 30px;
-z-index: 100;
+	z-index: 100;
 }
 
 /*
@@ -116,11 +115,12 @@ z-index: 100;
 	}
 }
 
-@media(max-width:768px){
-	.site-wrapper-inner{
+@media (max-width: 768px) {
+	.site-wrapper-inner {
 		margin-top: 0px;
 	}
 }
+
 /*
  * Cover
  */
@@ -184,9 +184,10 @@ z-index: 100;
 	display: inline-block;
 }
 
-.cover-container > .cover >.media{
+.cover-container > .cover > .media {
 	border: 1px solid grey;
 	box-shadow: 3px 3px 12px grey;
+	position: relative;
 }
 
 .media-body > p {
@@ -204,20 +205,31 @@ z-index: 100;
 	top: 15px;
 
 }
-.cover-container > .cover>.media{
+
+.cover-container > .cover > .media {
 	margin-top: 7px;
 }
-.cover-container > .cover>.media img{
-	height:140px;
-	margin:6px 6px;
+
+.cover-container > .cover > .media img {
+	height: 140px;
+	margin: 6px 6px;
 }
-[ng-cloak]{
+
+.cover-container > .cover > .media > a:last-of-type {
+	height: 150px;
+	width: 100%;
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+
+[ng-cloak] {
 	display: none;
 }
 
-@media (min-width: 992px){
-	.cover-container	>.container {
-		 width: 750px;
+@media (min-width: 992px) {
+	.cover-container > .container {
+		width: 750px;
 	}
 }
 
@@ -240,7 +252,7 @@ z-index: 100;
 	top: 0;
 	background-color: #333;
 	border-radius: 100%;
-background-color: grey;
+	background-color: grey;
 	-webkit-animation: sk-bounce 2.0s infinite ease-in-out;
 	animation: sk-bounce 2.0s infinite ease-in-out;
 }
@@ -252,39 +264,56 @@ background-color: grey;
 	animation-delay: -1.0s;
 }
 
-@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
-@keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+@-webkit-keyframes sk-rotate {
+	100% {
+		-webkit-transform: rotate(360deg)
+	}
+}
+
+@keyframes sk-rotate {
+	100% {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg)
+	}
+}
 
 @-webkit-keyframes sk-bounce {
-	0%, 100% { -webkit-transform: scale(0.0) }
-	50% { -webkit-transform: scale(1.0) }
+	0%, 100% {
+		-webkit-transform: scale(0.0)
+	}
+	50% {
+		-webkit-transform: scale(1.0)
+	}
 }
 
 @keyframes sk-bounce {
 	0%, 100% {
 		transform: scale(0.0);
 		-webkit-transform: scale(0.0);
-	} 50% {
-		  transform: scale(1.0);
-		  -webkit-transform: scale(1.0);
-	  }
+	}
+	50% {
+		transform: scale(1.0);
+		-webkit-transform: scale(1.0);
+	}
 }
-#scrollTop{
+
+#scrollTop {
 	position: fixed;
-	width:42px;
-	right:34px;
+	width: 42px;
+	right: 34px;
 	cursor: pointer;
 	float: right;
-	top:80%;
+	top: 80%;
 
 }
 
-.inner .input-group{
+.inner .input-group {
 	position: absolute;
-	left:96%;
+	left: 96%;
 	top: 34px;
 }
-.inner .input-group input{
-	width:75px;
-	top:1px;
+
+.inner .input-group input {
+	width: 75px;
+	top: 1px;
 }

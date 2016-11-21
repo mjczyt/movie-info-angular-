@@ -7,6 +7,11 @@ angular.module('movie', [
 ]).
 	config(['$routeProvider', function ($routeProvider) {
 		$routeProvider
+			.when('/detail/:id', {
+					templateUrl: 'tabs/detail.html',
+					controller: 'detailCtrl'
+				}
+			)
 			.when('/:category', {
 				templateUrl: 'tabs/view.html',
 				controller: 'indexCtrl'
@@ -14,7 +19,7 @@ angular.module('movie', [
 
 			.otherwise({redirectTo: '/top50'});
 	}])
-
+	//控制view的controller
 	.controller('indexCtrl', ['$scope', '$window', '$location', '$route', '$routeParams', 'HttpService', function ($scope, $window, $location, $route, $routeParams, HttpService) {
 
 		$scope.activeChange = function (id, title) {
@@ -25,10 +30,10 @@ angular.module('movie', [
 					$scope.li[i].active = false;
 				}
 			}
-			$route.updateParams({category: title});
+			//$route.updateParams({category: title});
 
 		};
-		$scope.init=function(){
+		$scope.init = function () {
 			$route.updateParams({category: 'top50'});
 		};
 		$scope.li = [{
@@ -68,10 +73,10 @@ angular.module('movie', [
 			scrollTop();
 		};
 		$scope.submit = function () {
-				$route.updateParams({category: 'search',q:$scope.submitText});
+			$route.updateParams({category: 'search', q: $scope.submitText});
 		};
 
-		(function(){
+		(function () {
 			var api = 'https://api.douban.com/v2/movie';
 			$scope.subjects = [];
 			switch ($routeParams.category) {
@@ -87,12 +92,26 @@ angular.module('movie', [
 				case 'search':
 					api = api + '/search' + "?q=" + $routeParams.q;
 					break;
+
 			}
 			HttpService.jsonp(api, {}, function (data) {
 				$scope.subjects = data.subjects;
 				$scope.$apply();
 			});
-		})()
+		})();
+
+
+		//控制detail的controller
+	}])
+	.controller('detailCtrl', ['$scope', '$window', '$location', '$route', '$routeParams', 'HttpService', function ($scope, $window, $location, $route, $routeParams, HttpService) {
+		var api = 'https://api.douban.com/v2/movie';
+
+		api = api + '/subject/' + $routeParams.id;
+		HttpService.jsonp(api, {}, function (data) {
+			$scope.detail = data;
+			$scope.$apply();
+			//console.log($scope.detail)
+		});
 
 	}]);
 
